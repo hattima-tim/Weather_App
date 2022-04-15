@@ -5,19 +5,32 @@ const sendReqForWeatherData= async function (location) {
         const weatherData=await response.json();
         return weatherData;
     }catch(err) {
-        alert(err);
+        console.logy(err);
     }
 
 };
 const getWeatherData =async function (location) {
-    const weatherData= await sendReqForWeatherData(location);
-    const { temp } = weatherData.main;
-    const { feels_like } = weatherData.main;
-    const { humidity } = weatherData.main;
-    const windSpeed=weatherData.wind.speed;
-    return { temp, feels_like, humidity, windSpeed };
+    try {
+        const weatherData= await sendReqForWeatherData(location);
+        const locationName=weatherData.name;
+        const { temp } = weatherData.main;
+        const { feels_like } = weatherData.main;
+        const { humidity } = weatherData.main;
+        const windSpeed=weatherData.wind.speed;
+        return { locationName, temp, feels_like, humidity, windSpeed };
+    }catch(err) {
+        console.log(err);
+    }
+
 };
-getWeatherData('dhaka')
-    .then ((value) => {
-        console.log(value);
-    });
+
+const searchButton=document.querySelector('#search');
+searchButton.addEventListener('click', async (e) => {
+    const searchQuery=e.target.previousElementSibling.value;
+    if (searchQuery==='') {
+        alert('Please search for a valid location.');
+    } else {
+        const data = await getWeatherData(searchQuery);
+        console.log(data);
+    }
+});
