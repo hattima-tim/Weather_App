@@ -9,4 +9,15 @@ const sendReqForWeatherData= async function (location) {
     }
 
 };
-sendReqForWeatherData('dhaka');
+const getWeatherData =async function (location) {
+    const weatherData= await sendReqForWeatherData(location);
+    const { temp } = weatherData.main;
+    const { feels_like } = weatherData.main;
+    const { humidity } = weatherData.main;
+    const windSpeed=weatherData.wind.speed;
+    return { temp, feels_like, humidity, windSpeed };
+};
+getWeatherData('dhaka')
+    .then ((value) => {
+        console.log(value);
+    });
