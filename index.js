@@ -1,6 +1,6 @@
 const sendReqForWeatherData= async function (location) {
     try {
-        const url=`http://api.openweathermap.org/data/2.5/weather?q=${ location }&APPID=6a45a6a1f9ac0dde88276011ee3a19fe`;
+        const url=`http://api.openweathermap.org/data/2.5/weather?q=${ location }&APPID=6a45a6a1f9ac0dde88276011ee3a19fe&units=metric`;
         const response=await fetch(url, { mode: "cors" });
         const weatherData=await response.json();
         return weatherData;
@@ -27,9 +27,9 @@ const getWeatherData =async function (location) {
 const showWeatherData = function (data) {
     const weatherDataModal = document.querySelector('#modal');
     const temp = document.createElement('p');
-    temp.textContent = `Temp: ${ data.temp } F`;
+    temp.textContent = `Temp: ${ data.temp } °C`;
     const feels_like = document.createElement('p');
-    feels_like.textContent = `Feels like: ${ data.feels_like } F`;
+    feels_like.textContent = `Feels like: ${ data.feels_like } °C`;
     const humidity = document.createElement('p');
     humidity.textContent = `Humidity: ${ data.humidity } %`;
     const windSpeed = document.createElement('p');
