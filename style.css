@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background: #6870e0;
 }
 h1 {
     display: flex;
@@ -7,6 +8,27 @@ h1 {
     align-items: center;
     background: #1e212d;
     color: #acb4f4;
-    height: 60%;
+    height: 100px;
     margin-top: 0;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input,
+#searchButton {
+    height: 30px;
+    background:rgb(172, 180, 244);
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+input {
+    background:rgb(172, 180, 244);
+}
+#searchButton {
+    background: black;
+    color: white;
+    font-size: 0.9em;
+    margin-left: 5px;
 }
