@@ -24,13 +24,29 @@ const getWeatherData =async function (location) {
 
 };
 
-const searchButton=document.querySelector('#search');
+const showWeatherData = function (data) {
+    const weatherDataModal = document.querySelector('#modal');
+    const temp = document.createElement('p');
+    temp.textContent = `Temp: ${ data.temp } F`;
+    const feels_like = document.createElement('p');
+    feels_like.textContent = `Feels like: ${ data.feels_like } F`;
+    const humidity = document.createElement('p');
+    humidity.textContent = `Humidity: ${ data.humidity } %`;
+    const windSpeed = document.createElement('p');
+    windSpeed.textContent = `Windspeed: ${ data.windSpeed } km/h`;
+    weatherDataModal.appendChild (temp);
+    weatherDataModal.appendChild (feels_like);
+    weatherDataModal.appendChild (humidity);
+    weatherDataModal.appendChild (windSpeed);
+};
+
+const searchButton=document.querySelector('#searchButton');
 searchButton.addEventListener('click', async (e) => {
     const searchQuery=e.target.previousElementSibling.value;
     if (searchQuery==='') {
         alert('Please search for a valid location.');
     } else {
         const data = await getWeatherData(searchQuery);
-        console.log(data);
+        showWeatherData(data);
     }
 });
