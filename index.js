@@ -38,6 +38,10 @@ const showWeatherData = function (data) {
     weatherDataModal.appendChild (feels_like);
     weatherDataModal.appendChild (humidity);
     weatherDataModal.appendChild (windSpeed);
+    weatherDataModal.style.display="flex";
+    weatherDataModal.style.flexWrap='wrap';
+    weatherDataModal.style.justifyContent="center";
+    weatherDataModal.style.alignItems="center";
 };
 
 const searchButton=document.querySelector('#searchButton');
