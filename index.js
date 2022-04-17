@@ -36,11 +36,7 @@ const showWeatherData = function (data) {
     humidity.textContent = `Humidity: ${ data.humidity } %`;
     const windSpeed = document.createElement('p');
     windSpeed.textContent = `Windspeed: ${ data.windSpeed } km/h`;
-    weatherDataModal.appendChild(locationName);
-    weatherDataModal.appendChild (temp);
-    weatherDataModal.appendChild (feels_like);
-    weatherDataModal.appendChild (humidity);
-    weatherDataModal.appendChild (windSpeed);
+    weatherDataModal.replaceChildren( locationName, temp, feels_like, humidity, windSpeed );
     weatherDataModal.style.display="flex";
     weatherDataModal.style.flexWrap='wrap';
     weatherDataModal.style.justifyContent="center";
