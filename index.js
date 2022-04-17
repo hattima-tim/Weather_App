@@ -5,7 +5,8 @@ const sendReqForWeatherData= async function (location) {
         const weatherData=await response.json();
         return weatherData;
     }catch(err) {
-        console.logy(err);
+        console.log(err);
+        alert('City not found');
     }
 
 };
