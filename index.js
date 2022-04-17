@@ -26,6 +26,8 @@ const getWeatherData =async function (location) {
 
 const showWeatherData = function (data) {
     const weatherDataModal = document.querySelector('#modal');
+    const locationName = document.createElement('p');
+    locationName.textContent = data.locationName;
     const temp = document.createElement('p');
     temp.textContent = `Temp: ${ data.temp } °C`;
     const feels_like = document.createElement('p');
@@ -34,6 +36,7 @@ const showWeatherData = function (data) {
     humidity.textContent = `Humidity: ${ data.humidity } %`;
     const windSpeed = document.createElement('p');
     windSpeed.textContent = `Windspeed: ${ data.windSpeed } km/h`;
+    weatherDataModal.appendChild(locationName);
     weatherDataModal.appendChild (temp);
     weatherDataModal.appendChild (feels_like);
     weatherDataModal.appendChild (humidity);
