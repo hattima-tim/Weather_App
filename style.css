@@ -6,15 +6,17 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2.5em;
     background: #1e212d;
     color: #acb4f4;
-    height: 100px;
+    height: 130px;
     margin-top: 0;
 }
 form {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 20px;
 }
 input,
 #searchButton {
@@ -42,10 +44,20 @@ input {
     border: 2px solid transparent;
     box-sizing: border-box;
     margin:10px;
-    width:250px;
+    width:280px;
     background-color: #1e212d;
     color: white;
 }
+h3 {
+    font-size: 1.6em;
+    line-height: 55px;
+    margin: 0px;
+    padding: 10px;
+    color: #acb4f4;
+}
 P {
-    margin: 8px;
+    margin: 0px;
+    padding: 5px;
+    line-height: 32px;
+    font-size: 20px;
 }
