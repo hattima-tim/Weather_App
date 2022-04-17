@@ -26,7 +26,7 @@ const getWeatherData =async function (location) {
 
 const showWeatherData = function (data) {
     const weatherDataModal = document.querySelector('#modal');
-    const locationName = document.createElement('p');
+    const locationName = document.createElement('h3');
     locationName.textContent = data.locationName;
     const temp = document.createElement('p');
     temp.textContent = `Temp: ${ data.temp } °C`;
