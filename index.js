@@ -3,10 +3,12 @@ const sendReqForWeatherData= async function (location) {
         const url=`https://api.openweathermap.org/data/2.5/weather?q=${ location }&APPID=6a45a6a1f9ac0dde88276011ee3a19fe&units=metric`;
         const response=await fetch(url, { mode: "cors" });
         const weatherData=await response.json();
+        if (weatherData.cod==='404') {
+            throw new Error(weatherData.message);
+        }
         return weatherData;
     }catch(err) {
-        console.log(err);
-        alert('City/Country not found');
+        alert(err);
     }
 
 };
