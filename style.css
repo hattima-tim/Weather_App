@@ -47,6 +47,7 @@ input {
     width:280px;
     background-color: #1e212d;
     color: white;
+    text-align: center;
 }
 h3 {
     font-size: 1.6em;
