@@ -6,7 +6,7 @@ const sendReqForWeatherData= async function (location) {
         return weatherData;
     }catch(err) {
         console.log(err);
-        alert('City not found');
+        alert('City/Country not found');
     }
 
 };
@@ -38,10 +38,7 @@ const showWeatherData = function (data) {
     const windSpeed = document.createElement('p');
     windSpeed.textContent = `Windspeed: ${ data.windSpeed } km/h`;
     weatherDataModal.replaceChildren( locationName, temp, feels_like, humidity, windSpeed );
-    weatherDataModal.style.display="flex";
-    weatherDataModal.style.flexWrap='wrap';
-    weatherDataModal.style.justifyContent="center";
-    weatherDataModal.style.alignItems="center";
+    weatherDataModal.style.display="block";
 };
 
 const searchButton=document.querySelector('#searchButton');
